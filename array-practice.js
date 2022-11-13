@@ -91,26 +91,22 @@ const smallerThanCurr = arr => {
 
 const twoSum = (arr, target) => {
 
-  let object = {}
+  if(arr.length === 0)
+  {
+    return false
+  }
+
+  let pop = arr.pop()
 
   for(let i=0; i<arr.length; i++)
   {
-    object[i] = arr[i]
-  }
-  let reverse = arr.reverse()
-
-  for(let i=0; i<reverse.length; i++)
-  {
-    if(arr[i] + reverse[i] === target)
+    if(arr[i] + pop === target)
     {
-      return false
+      return true
     }
   }
 
-  return true
-
-
-
+  return twoSum(arr, target)
 };
 
 const secondLargest = arr => {
@@ -152,7 +148,7 @@ const secondLargest = arr => {
 const shuffle = (arr) => {
 
   // Your code here
-  
+
 
 };
 
