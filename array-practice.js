@@ -5,9 +5,11 @@ const findMinimum = arr => {
   let min = arr[0]
   //let min = Infinity affects space complexity due to how large it is
 
-  for (let i=1; i<arr.length; i++) // time : linear
+  for (let i=1; i<arr.length; i++) // Time Complexity: Linear
   {
-    if(arr[i] < min) // time : constant
+
+    //conditionals usually have a constant time complexity unless iterating within such .includes
+    if(arr[i] < min) // Time Complexity: Constant
     {
       min = arr[i]
     }
@@ -15,77 +17,44 @@ const findMinimum = arr => {
 
   return min
 
-}; // time complexity linear space complexity constant
+}; // Time Complexity: Linear  ----- Space Complexity: Constant
 
 const runningSum = arr => {
 
   // Your code here
 
-  //console.log('orignial' , arr)
-
-  if(arr.length === 0)
-  {
-    return arr
-  }
-
   let array = []
   let sum = 0
-  for(let i=0; i<arr.length; i++)
+
+  for(let i=0; i<arr.length; i++) // Time Complexity : Linear
   {
     sum = sum + arr[i]
-    array.push(sum) //linear bec the push is inside the for
+    array.push(sum)  //linear bec the push is inside the for
   }
   return array
 
-}; //time : linear space : linear
+}; //Time Complexity: Linear ----- Space Complexity: Linear
 
 const evenNumOfChars = arr => {
 
   // Your code here
   let count = 0
-  for(let i=0; i<arr.length; i++) // time : linear
+  for(let i=0; i<arr.length; i++) // Time Complexity: Linear
   {
-    if(arr[i].length %2 === 0) // time : constant
+    if(arr[i].length %2 === 0) // Time Complexity: Constant
     {
       count ++
     }
   }
 
   return count
-}; // time complexity : linear space compelxity : constant
+}; // Time Complexity: Linear ------------ Space Compelxity: Constant
 
 const smallerThanCurr = arr => {
 
   // Your code here
 
-  // let array = []
 
-
-
-  // if(arr.length === 0)
-  // {
-  //   return array
-  // }
-
-
-  // let count = 0
-  // let pop = arr.pop()
-
-  // for(let i=0; i<arr.length; i++)
-  // {
-
-  //   if(arr[i] < pop)
-  //   {
-  //     count++
-  //   }
-  // }
-
-  // array.push(count)
-
-
-
-
-  // return array.concat(smallerThanCurr(arr))
 
 };
 
@@ -107,7 +76,7 @@ const twoSum = (arr, target) => {
   }
 
   return twoSum(arr, target)
-};
+}; //since it is recursive ----  Time Complexity: Linear ---- Space Complexity ??? Linear
 
 const secondLargest = arr => {
 
@@ -115,35 +84,35 @@ const secondLargest = arr => {
 
   let max = 0
 
-  for(let i=0; i<arr.length; i++)
+  for(let i=0; i<arr.length; i++) // Time Complexity: Linear
   {
-    if(arr[i] > max)
+    if(arr[i] > max) //Time Complexity: Constant
     {
       max = arr[i]
     }
   }
 
-  arr.splice(arr.indexOf(max), 1) // time : o(n) , space : o(1)
+  arr.splice(arr.indexOf(max), 1) // Time Complexity: o(n) ----- Space Complexity: o(1)
 
-  //slice o(n)
+  //array.slice()  Space Complexity: o(n)
 
   let second = 0
 
-  for(let i=0; i<arr.length; i++)
+  for(let i=0; i<arr.length; i++) //Time Complexity: Linear
   {
-    if(arr[i] > second )
+    if(arr[i] > second ) //Time Complexity: Constant
     {
       second = arr[i]
     }
   }
 
-  if(second === 0)
+  if(second === 0) // Time Complexity: Constant
   {
     second = undefined
   }
 
   return second
-};
+}; // Time Complexity: Linear ------ Space Complexity: Constant 
 
 const shuffle = (arr) => {
 
@@ -151,6 +120,9 @@ const shuffle = (arr) => {
 
 
 };
+
+// console.log(twoSum([4, 2, 5, 7, 9], 10))
+// console.log(twoSum([4, 2, 3, 6, 9], 16))
 
 
 module.exports = [findMinimum, runningSum, evenNumOfChars, smallerThanCurr, twoSum, secondLargest, shuffle];
