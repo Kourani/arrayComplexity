@@ -58,33 +58,34 @@ const smallerThanCurr = arr => {
 
   // Your code here
 
-  let array = []
+  // let array = []
 
 
 
-  if(arr.length === 0)
-  {
-    return array
-  }
+  // if(arr.length === 0)
+  // {
+  //   return array
+  // }
 
 
-  let count = 0
-  let pop = arr.pop()
+  // let count = 0
+  // let pop = arr.pop()
 
-  for(let i=0; i<arr.length; i++)
-  {
+  // for(let i=0; i<arr.length; i++)
+  // {
 
-    if(arr[i] < pop)
-    {
-      count++
-    }
-  }
+  //   if(arr[i] < pop)
+  //   {
+  //     count++
+  //   }
+  // }
 
-  array.push(count)
+  // array.push(count)
 
 
 
-  return array.concat(smallerThanCurr(arr))
+
+  // return array.concat(smallerThanCurr(arr))
 
 };
 
@@ -102,11 +103,11 @@ const twoSum = (arr, target) => {
   {
     if(arr[i] + reverse[i] === target)
     {
-      return true
+      return false
     }
   }
 
-  return false
+  return true
 
 
 
@@ -131,6 +132,7 @@ const secondLargest = arr => {
   //slice o(n)
 
   let second = 0
+
   for(let i=0; i<arr.length; i++)
   {
     if(arr[i] > second )
@@ -139,12 +141,18 @@ const secondLargest = arr => {
     }
   }
 
+  if(second === 0)
+  {
+    second = undefined
+  }
+
   return second
 };
 
 const shuffle = (arr) => {
 
   // Your code here
+  
 
 };
 
